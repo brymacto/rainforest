@@ -1,2 +1,11 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h2><%= @product.name %></h2>
+
+<article class="product">
+<div class="name"><%= @product.name %></div>
+<div class="description"><%= @product.description %></div>
+<div class="price"><%= @product.formatted_price %></div>
+<div class="created"><%= @product.created_at.strftime("%F") %></div>
+
+
+</article>
+
