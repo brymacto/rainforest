@@ -4,6 +4,7 @@ $linkblue: #2B81EA
 $primcolor: #89C004
 $seccolor: #797979
 $bgcolorhalf: #F5F5F5
+$white: #fff
 
 *
   box-sizing: border-box
@@ -32,10 +33,13 @@ article.thumb
   height: 9em
   padding: 30px
   position: relative
-  float: right
+  float: left
   margin: 10px 1.5%
+  .name
+    font-size: 1.25em
   .price
     float: right
+
   .description
     margin-top: 0.5em
 
@@ -83,3 +87,19 @@ a
   text-decoration: none
   &:hover
     text-decoration: underline
+
+.field
+  margin-bottom: 1em
+
+input, textarea
+  width: 100%
+  font-size: 1.1em
+  padding: 10px
+  margin-top: 10px
+  &[type="submit"]
+    width: auto
+    padding: 10px 20px
+    background: $primcolor
+    color: $white
+    border: 0 none
+    cursor: pointer

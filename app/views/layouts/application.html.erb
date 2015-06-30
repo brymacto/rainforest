@@ -27,7 +27,7 @@
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><%= link_to "New Product", 'products/new' %></li>
+        <li><%= link_to "New Product", new_product_path %></li>
         <li></li>
         <li></li>
         <li></li>
@@ -48,7 +48,11 @@
       <%= yield %>
     </section>
     <aside>
-      Sidebar
+      <div class="widget">
+      <h3>Contact Us</h3>
+      brymac@gmail.com
+      </div>
+
     </aside>
   </div>
 </body>
