@@ -1,15 +1,12 @@
-<h1>Welcome to Rainforest</h1>
-<nav>
-  <ul>
-    <li><%= link_to "New", 'products/new' %></li>
-  </ul>
-</nav>
-<ul>
-<h2>Products</h2>
+<h1>Product Listings</h1>
+
 <% @products.each do |product| %>
-<li>
-  <%= link_to product.name, "/products/#{product.id}" %>
-</li>
+
+<article class="thumb">
+  <%= link_to product.name, "/products/#{product.id}", class: "name" %><div class="price">$<%= product.formatted_price %></div>
+  <div class="description"><%= product.description %></div>
+
+  </article>
+
 
 <% end %>
-</ul>
