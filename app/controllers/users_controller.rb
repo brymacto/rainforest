@@ -4,13 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
-      @user = current_user
-      @reviews = current_user.reviews
-
-    else
-      redirect_to products_url, notice: "Error, you are not signed in"
-    end
+    @user = User.find(params[:id])
+    @reviews = @user.reviews
   end
 
   def edit
