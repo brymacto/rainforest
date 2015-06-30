@@ -6,11 +6,34 @@ class UsersController < ApplicationController
   def show
     if current_user
       @user = current_user
+      @reviews = current_user.reviews
+
     else
       redirect_to products_url, notice: "Error, you are not signed in"
     end
   end
 
+  def edit
+    if current_user
+      @user = current_user
+    else
+      redirect_to products_url, notice: "Error, you are not signed in"
+    end
+  end
+
+  def update
+    if current_user
+      @user = current_user
+      if @user.update_attributes(user_params)
+        redirect_to @user
+      else
+        render :edit
+      end
+
+    else
+      redirect_to products_url, notice: "Error, you are not signed in"
+    end
+  end
 
   def create
     @user = User.new(user_params)
