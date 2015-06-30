@@ -1,13 +1,11 @@
 <h3>Reviews</h3>
 
-  <p>Reviews for <%= @product.name %></p>
-
   <% @product.reviews.each do |review| %>
     <p>
       <%= review.comment %>
       <br>
       <% if review.user != nil %>
-        <em> by <%= review.user.name %></em>
+        <em> by <%= link_to review.user.name, review.user %></em>
         Added on: <%= review.created_at %>
       <% end %>
     </p>
