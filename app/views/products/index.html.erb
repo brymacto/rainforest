@@ -3,7 +3,7 @@
 <% @products.each do |product| %>
 
 <%= content_tag_for(:article, product, class: "thumb") do %>
-  <%= link_to product.name, "/products/#{product.id}", class: "name" %><div class="price">$<%= product.formatted_price %></div>
+  <%= link_to product.name, "/products/#{product.id}", class: "name" %><div class="price"><%= product.formatted_price %></div>
   <div class="description"><%= product.description %></div>
 
 <% end %>

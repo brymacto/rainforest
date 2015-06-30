@@ -7,13 +7,34 @@
 </nav>
 
 <article class="product">
-  <div class="name"><%= @product.name %></div>
-  <div class="description"><%= @product.description %></div>
-  <div class="price">$<%= @product.formatted_price %></div>
-  <div class="created"><%= @product.created_at.strftime("%F") %></div>
+
+  <table class="product">
+    <tr>
+      <th>Name</th>
+      <td><%= @product.name %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= @product.description %></td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td><%= @product.formatted_price %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @product.created_at.strftime("%F") %></td>
+    </tr>
+    <tr>
+      <th>Reviews</th>
+      <td><%= render 'show_reviews' %></td>
+    </tr>
+
+  </table>
+
 </article>
 
 
-<%= render 'show_reviews' %>
+
 
 <%= render 'new_review' %>

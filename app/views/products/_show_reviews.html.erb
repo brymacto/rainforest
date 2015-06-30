@@ -1,12 +1,32 @@
-<h3>Reviews</h3>
-
-  <% @product.reviews.each do |review| %>
+<!--   <% @product.reviews.each do |review| %>
     <p>
       <%= review.comment %>
       <br>
       <% if review.user != nil %>
-        <em> by <%= link_to review.user.name, review.user %></em>
-        Added on: <%= review.created_at %>
+        <em> by </em>
+        Added on:
       <% end %>
     </p>
-  <% end %>
+  <% end %> -->
+
+
+
+
+
+        <% if !@product.reviews.empty? %>
+        <ol>
+          <% @product.reviews.each do |review| %>
+              <% if (review.user != nil) %>
+
+
+
+              <li><h4>Review by <%= link_to review.user.name, review.user %></h4>
+                <p><%= review.comment %> <%= review.created_at %>
+                </p>
+              </li>
+              <% end %>
+          <% end %>
+         </ol>
+      <% else %>
+        <p>There are not yet any reviews for this product.  </p>
+      <% end %>
