@@ -6,7 +6,6 @@
   </ul>
 </nav>
 
-
 <table class="user">
   <tr>
     <th>Name:</th>
@@ -18,23 +17,23 @@
   </tr>
   <tr>
     <th>Reviews:</th>
-    <td>
-      <% @reviews.each do |review| %>
+    <td class="reviews">
 
 
-      <% if Product.find_by(id: review.product_id) %>
-<h4>Review of <%= link_to Product.find(review.product_id).name, product_path(Product.find(review.product_id)) %></h4>
+      <% if !@reviews.empty? %>
+        <ol>
+          <% @reviews.each do |review| %>
+            <% if Product.find_by(id: review.product_id) %>
+              <li><h4>Review of <%= link_to Product.find(review.product_id).name, product_path(Product.find(review.product_id)) %></h4>
+                <p><%= review.comment %>
+                </p>
+              </li>
+            <% end %>
+          <% end %>
+         </ol>
+      <% else %>
+        <p><%= @user.name %> has not reviewed any products yet.</p>
       <% end %>
-
-
-<!--
-    t.text     "comment"
-    t.integer  "product_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false -->
-
-        <% end %>
 
 
     </td>
