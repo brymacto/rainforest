@@ -2,11 +2,11 @@
 
 <% @products.each do |product| %>
 
-<article class="thumb">
+<%= content_tag_for(:article, product, class: "thumb") do %>
   <%= link_to product.name, "/products/#{product.id}", class: "name" %><div class="price">$<%= product.formatted_price %></div>
   <div class="description"><%= product.description %></div>
 
-  </article>
+<% end %>
 
 
 <% end %>
