@@ -1,0 +1,71 @@
+$bgcolor: #EAEAEA
+$bgcoloralt: #fff
+$linkblue: #2B81EA
+$primcolor: #89C004
+$seccolor: #797979
+
+*
+  box-sizing: border-box
+
+body
+  font-family: 'Open Sans', sans-serif
+  background-color: $bgcolor
+  margin: 0px
+
+div.wrapper
+  max-width: 1140px
+  margin: 0 auto
+
+section
+  float: left
+  margin: 0 1.5%
+  width: 67%
+  padding: 20px
+
+aside
+  float: right
+  width: 27%
+  margin: 0 1.5%
+  padding: 20px
+
+.headerbar
+  width: 100%
+  background-color: $bgcoloralt
+  border-bottom: 1px solid $primcolor
+
+
+header
+  max-width: 1140px
+  margin: 0 auto
+  padding: 20px
+  position: relative
+  .logo
+    /*font-family: 'Seaweed Script', cursive*/
+    font-family: 'Cabin Sketch', cursive
+    font-size: 6em
+    color: $primcolor
+  .userinfo
+    position: absolute
+    top: 30px
+    right: 20px
+    font-size: 0.8em
+  nav
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 0
+      li
+        display: inline
+        text-decoration: none
+        padding: 10px
+        a
+          color: $primcolor
+
+
+
+
+a
+  color: $linkblue
+  text-decoration: none
+  &:hover
+    text-decoration: underline
