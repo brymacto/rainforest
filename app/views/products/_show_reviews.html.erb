@@ -9,19 +9,15 @@
     </p>
   <% end %> -->
 
-
-
-
-
         <% if !@product.reviews.empty? %>
         <ol>
           <% @product.reviews.each do |review| %>
               <% if (review.user != nil) %>
 
-
-
               <li><h4>Review by <%= link_to review.user.name, review.user %></h4>
-                <p><%= review.comment %> <%= review.created_at %>
+                <div class="timestamp"><%= review.created_at.strftime("%F") %></div>
+                <p>
+                <%= review.comment %>
                 </p>
               </li>
               <% end %>

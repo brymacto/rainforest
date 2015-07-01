@@ -1,4 +1,4 @@
-<h2>User: <%= @user.name %></h2>
+<h1 class="ib">User: <%= @user.name %></h1>
 <% if @user == current_user %>
 <nav>
   <ul>
@@ -26,6 +26,7 @@
           <% @reviews.each do |review| %>
             <% if Product.find_by(id: review.product_id) %>
               <li><h4>Review of <%= link_to Product.find(review.product_id).name, product_path(Product.find(review.product_id)) %></h4>
+                <div class="timestamp"><%= review.created_at.strftime("%F") %></div>
                 <p><%= review.comment %>
                 </p>
               </li>

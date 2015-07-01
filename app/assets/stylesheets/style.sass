@@ -1,11 +1,13 @@
 $bgcolor: #F3F3F3
 $bgcoloralt: #fff
-$linkblue: #2B81EA
+$linkblue: #0080FF
 $primcolor: #89C004
 $seccolor: #797979
-$bgcolorhalf: #F5F5F5
 $white: #fff
+$whiteish: #FAFAFA
 $blackish: #333333
+$red: #D4282E
+$redbg: #E3A1A5
 
 *
   box-sizing: border-box
@@ -20,17 +22,44 @@ div.wrapper
   max-width: 1140px
   margin: 0 auto
 
+.clear
+  clear: both
+  height: 1.5em
+
+
 section
   float: left
   margin: 0 1.5%
   width: 67%
   padding: 20px
+  h1.ib
+    display: inline-block
   h1, h2, h3, h4, h5
     color: $primcolor
     font-weight: normal
+    font-family: 'Patua One', sans-serif
+  nav
+    float: right
+    display: inline
+    margin-top: 24px
+  ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+    li
+      display: inline
+      text-decoration: none
+      padding: 10px
+      &:first-child
+        padding-left: 0px
+      a
+        width: auto
+        padding: 10px 20px
+        color: $primcolor
+        border: 1px solid $primcolor
 
 article.thumb
-  background-color: $bgcolorhalf
+  background-color: $whiteish
   width: 47%
   height: 9em
   padding: 30px
@@ -63,7 +92,6 @@ header
   padding: 20px
   position: relative
   .logo
-    /*font-family: 'Seaweed Script', cursive*/
     font-family: 'Cabin Sketch', cursive
     font-size: 6em
     color: $primcolor
@@ -84,6 +112,15 @@ header
         a
           color: $primcolor
 
+#alert
+  color: $red
+  border: 1px solid $redbg
+  padding: 10px
+
+.timestamp
+  font-style: italic
+  font-size: 0.75em
+
 a
   color: $linkblue
   text-decoration: none
@@ -98,6 +135,8 @@ input, textarea
   font-size: 1.1em
   padding: 10px
   margin-top: 10px
+  // border-color: rgb(238, 238, 238);
+
   &[type="submit"]
     width: auto
     padding: 10px 20px
@@ -118,6 +157,7 @@ table
   th
     color: $primcolor
     width: 1%
+    font-weight: normal
   tr
     border-bottom: 1px dotted $primcolor
     border-top: 1px dotted $primcolor
@@ -130,6 +170,7 @@ table
         margin-bottom: 0px
         color: $blackish
         font-weight: bold
+        font-family: 'Open Sans', sans-serif
       p
         margin-top: 0.25em
         font-size: 0.85em
