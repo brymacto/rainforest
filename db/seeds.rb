@@ -6,11 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+10.times do
+  puts "name: " + Faker::Commerce.product_name + ", description: " + Faker::Lorem.sentence+ ", price_in_cents: " + (Faker::Commerce.price * 100).to_i.to_s
+end
 
-Product.create(name: "Mouse", description: "Use your laptop with this handy mouse", price_in_cents: 4000)
-Product.create(name: "Trackpad", description: "Great accuracy!", price_in_cents: 5000)
-Product.create(name: "Keyboard", description: "Wireless freedom with Bluetooth.  Live wirelessly!", price_in_cents: 5000)
-Product.create(name: "Monitor", description: "See clearly with this Retina display", price_in_cents: 70000)
+100.times do
+
+  Product.create(name: Faker::Commerce.product_name, description: Faker::Lorem.sentence, price_in_cents: (Faker::Commerce.price * 100).to_i)
+end
+
+
+# Product.create(name: "Mouse", description: "Use your laptop with this handy mouse", price_in_cents: 4000)
+# Product.create(name: "Trackpad", description: "Great accuracy!", price_in_cents: 5000)
+# Product.create(name: "Keyboard", description: "Wireless freedom with Bluetooth.  Live wirelessly!", price_in_cents: 5000)
+# Product.create(name: "Monitor", description: "See clearly with this Retina display", price_in_cents: 70000)
 
 
 

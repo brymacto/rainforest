@@ -15,7 +15,7 @@
               <% if (review.user != nil) %>
 
               <li><h4>Review by <%= link_to review.user.name, review.user %></h4>
-                <div class="timestamp"><%= review.created_at.strftime("%F") %></div>
+                <%= review.created_at.strftime("%F") %>
                 <p>
                 <%= review.comment %>
                 </p>

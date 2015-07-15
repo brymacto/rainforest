@@ -1,12 +1,12 @@
 <h1>Product Listings</h1>
 
-<% @products.each do |product| %>
-
-<%= content_tag_for(:article, product, class: "thumb") do %>
-  <%= link_to product.name, "/products/#{product.id}", class: "name" %><div class="price"><%= product.formatted_price %></div>
-  <div class="description"><%= product.description %></div>
-
+<%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
 <% end %>
 
 
-<% end %>
+<%= render @products %>
+
+
+
