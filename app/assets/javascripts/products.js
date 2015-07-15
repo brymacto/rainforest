@@ -4,4 +4,6 @@ $(document).on('ready page:load', function() {
     var searchValue = $('#search').val();
     $.getScript('/products?search=' + searchValue);
   });
+
+  
 });

@@ -135,14 +135,15 @@ input, textarea
   padding: 10px
   margin-top: 10px
   // border-color: rgb(238, 238, 238);
-
-  &[type="submit"]
+  &[type="submit"], &[type="button"]
     width: auto
     padding: 10px 20px
     background: $primcolor
     color: $white
     border: 0 none
     cursor: pointer
+  &[type="button"]
+    display: none
 
 
 table
