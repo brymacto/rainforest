@@ -1,17 +1,21 @@
 <h1>Product Listings</h1>
 
+<div id="searchform">
 <%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search" %>
-   <!--# button_tag "Clear", id: 'clear'-->
     <input type="button" name="clear" value="Clear" id="clear">
   
 <% end %>
+</div>
+<div class="page_entries_info"><%= page_entries_info @products %>
+</div>
 
 <div id="products">
 <%= render @products %>
   <% puts "Params search: " + params[:search].to_s %>   
 </div>
 
+<%= paginate @products %>
 
 
