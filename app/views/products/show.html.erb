@@ -26,7 +26,9 @@
     </tr>
     <tr>
       <th>Reviews</th>
-      <td><%= render 'show_reviews' %></td>
+      <td><div id="review-list">
+    <%= render :partial => "reviews" %>
+</div></td>
     </tr>
 
   </table>

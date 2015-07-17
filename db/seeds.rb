@@ -6,8 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(email: "brymac@gmail.com", password: "password", password_confirmation: "password", name: "Bryan MacDiarmid")
+
 100.times do
-  Product.create(name: Faker::Commerce.product_name, description: Faker::Lorem.sentence, price_in_cents: (Faker::Commerce.price * 100).to_i)
+  Product.create(name: Faker::Commerce.product_name, description: Faker::Company.catch_phrase, price_in_cents: (Faker::Commerce.price * 100).to_i)
 end
 
 
