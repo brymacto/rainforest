@@ -1,15 +1,12 @@
 
-<% if !@product.reviews.empty? %>
-<ol>
-<% @product.reviews.each do |review| %>
-      <div class="poster">
-        Posted by <%= review.user.name %> on <%= review.created_at %>
-      </div>
-      <p class="comment">
-        <%= review.comment %>
-      </p>
+  <% @product.reviews.each do |review| %>
+  <% unless review.new_record? %>
+        <div class="poster">
+          Posted by <%= review.user.name %> on <%= review.created_at %>
+        </div>
+        <p class="comment">
+          <%= review.comment %>
+        </p>
+
     <% end %>
-</ol>
-<% else %>
-<p>There are not yet any reviews for this product.  </p>
-<% end %>
+      <% end %>
