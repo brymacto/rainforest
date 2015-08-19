@@ -28,6 +28,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'puma'
+gem 'pg'
+gem 'rails_12factor'
 gem 'kaminari'
 
 # Use Capistrano for deployment

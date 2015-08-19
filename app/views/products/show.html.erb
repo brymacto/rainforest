@@ -35,9 +35,12 @@
 
 </article>
 
+<% if @review && @review.errors %>
+  
 <div id="review-form-errors">
     <%= render :partial => "/products/review_form_errors" %>
 </div>
+<% end %>
 
 
 

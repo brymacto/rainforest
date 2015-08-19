@@ -12,5 +12,8 @@ $(document).on('ready page:load', function() {
         $('.pagination').text("Fetching more products...");
         return $.getScript(url);
       }
+      if (url == null) {
+        $('.pagination').hide();
+      }
    });
 });
